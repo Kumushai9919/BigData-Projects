@@ -3,7 +3,7 @@
 #### 다음과 같이 두 가지 방법으로 해당 지수 가져오겠습니다 -->
 <img width="700" alt="Screenshot 2023-05-06 at 5 45 50 PM" src="https://user-images.githubusercontent.com/83897840/236613716-b6f84de3-9bce-47d7-a2c5-dd4e985c6daf.png">
 
-##### 1. span 클래스의 num 객체로 가져오는 방법:
+##### 1. span 클래스의 num 이름을 가지는 객체를 가져오는 방법:
 ```` python
 import urllib.request
 from bs4 import BeautifulSoup
@@ -38,3 +38,31 @@ output:
 <span class="num num2" id="KOSPI_now">2,500.94</span>
 2500.94
 ````
+
+##### 2. KOSPI.now라는 id의 값을 가져오는 방법:
+```` python  
+
+soup.find(id = 'KOSPI_now')
+
+# KOSPI_now 라는 id를 기준으로 크롤링 진행
+# id를 기준으로 데이터를 가져올 때는 find 메소드를 사용
+ 
+````
+output:
+````
+<span class="num num2" id="KOSPI_now">2,500.94</span>
+````
+```` python  
+
+float(soup.find(id = 'KOSPI_now').string.replace(',', ''))
+ 
+````
+output:
+````
+2500.94
+````
+
+
+
+
+
