@@ -22,8 +22,9 @@ soup = BeautifulSoup(html, 'html.parser')
 
 soup.select('span.num')
 ````
-output:
+
 ````
+# output:
 [<span class="num _au_real_list">@code@</span>,
  <span class="num num2" id="KOSPI_now">2,500.94</span>,
  <span class="num" id="KOSDAQ_now">845.06</span>,
@@ -33,8 +34,9 @@ output:
  soup.select('span.num')[1]
  float(soup.select('span.num')[1].string.replace(',', ''))
   ````
-  output:
+ 
 ````
+# output:
 <span class="num num2" id="KOSPI_now">2,500.94</span>
 2500.94
 ````
@@ -48,8 +50,9 @@ soup.find(id = 'KOSPI_now')
 # id를 기준으로 데이터를 가져올 때는 find 메소드를 사용
  
 ````
-output:
+ 
 ````
+# output:
 <span class="num num2" id="KOSPI_now">2,500.94</span>
 ````
 ```` python  
@@ -57,8 +60,9 @@ output:
 float(soup.find(id = 'KOSPI_now').string.replace(',', ''))
  
 ````
-output:
+ 
 ````
+# output:
 2500.94
 ````
 
